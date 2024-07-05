@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details</title>
+</head>
+<body>
+    <h2>Please enter your pet details.</h2>
+    <form action="{% url 'authentication_app:userandpetdetails' %}" method="POST">
+        {% csrf_token %}
+        <h4>Please enter your details.</h4>
+        <label for="first_name">Firstname: </label>
+        <input type="first_name" id="first_name" name="first_name"><br><br>
+
+        <label for="last_name">Lastname:</label>
+        <input type="last_name" id="last_name" name="last_name"><br><br>
+
+        <label for="email">Email:</lable>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="phone">Phone:</lable>  
+        <input type="text" name="phone" size="10"/> <br> <br> 
+
+        <h4>Please enter your Pet details.</h4>
+
+        <label for="pet_name">Petname: </label>
+        <input type="pet_name" id="pet_name" name="pet_name"><br><br>
+
+        <label for="pet_behavior">Pet Behavior: </label>
+        <input type="pet_behavior" id="pet_behavior" name="pet_behavior"><br><br>
+
+        <label for="pet_age">Pet Age: </label>
+        <input type="pet_age" id="pet_age" name="pet_age"><br><br>
+
+        <label for="meal_timing">Meal timing of your pet: </label>
+        <input type="meal_timing" id="meal_timing" name="meal_timing"><br><br>
+        
+        <label for="breed_of_dog">Breed: </label>
+        <select name="breed_of_dog" id="breed_of_dog">
+            {% for i in breed_obj %}
+            <option value="{{i.id}}">{{i.breed_of_dog}}</option>
+            {% endfor %}
+          </select><br><br>
+
+        <label for="type_of_training">Type of training: </label>
+        <select name="type_of_training" id="type_of_training">
+            {% for i in training_type_obj %}
+            <option value="{{i.id}}">{{i.type_of_training}},{{i.duration}} Month,Fee :-{{i.cost}}</option>
+            {% endfor %}
+          </select><br><br>
+
+        <label for="discription">Please enter any left over necesary details of your pet :</label><br>
+        <textarea cols="80" rows="5"  name="discription" value="discription"></textarea><br><br> 
+        <input type="submit">
+    </form>
+</body>
+</html>

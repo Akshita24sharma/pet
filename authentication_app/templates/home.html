@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to our home page.</h1>
+    {% if messages %}
+          {% for message in messages %}
+            <h2>{{message}}</h2>
+          {% endfor %}
+    {% endif %}
+    <h4>Please click here for  
+        <a href="{% url 'authentication_app:login'  %}">Login</a>.
+    </h4>
+    <h4>Trainer can get them self register by clicking on
+        <a href="{% url 'authentication_app:register'  %}">Register</a>.
+    </h4>
+    <h4>Click here to register your pet for training
+        <a href="{% url 'authentication_app:userandpetdetails'  %}">Training</a>.
+    </h4>
+</body>
+</html>

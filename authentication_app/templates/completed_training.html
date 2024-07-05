@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Here are the completed trainings.</h1>
+        <table border="1"  cellspacing="0" width="100%" cellpadding="10">
+            <tr>
+                <thead>
+                    <th> ID</th>
+                    <th>Fisrt Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Pet Name</th>
+                    <th>Pet Behavior</th>
+                    <th>Pet Age</th>
+                    <th>Meal timing of your pet</th>
+                    <th>Breed</th>
+                    <th>Type of training</th>
+                    <th>Description</th>
+                    <th>Training Duration (In Month)</th>
+                    <th>Training Fee (In INR)</th>
+                </thead>
+                <tbody>
+                    <tbody>
+                        {% for i in obj %}
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td>{{i.first_name}}</td>
+                            <td>{{i.last_name}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.phone}}</td>
+                            <td>{{i.pet_name}}</td>
+                            <td>{{i.pet_behavior}}</td>
+                            <td>{{i.pet_age}}</td>
+                            <td>{{i.meal_timing}}</td>
+                            <td>{{i.breed_of_dog.breed_of_dog}}</td>
+                            <td>{{i.type_of_training.type_of_training}}</td>
+                            <td>{{i.discription}}</td>
+                            <td>{{i.type_of_training.duration}}</td>
+                            <td>{{i.type_of_training.cost}}</td>
+                        </tr>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </tr>
+        </table>
+</body>
+</html>
